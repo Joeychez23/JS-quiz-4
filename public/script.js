@@ -485,6 +485,57 @@ clear.addEventListener("click", function(){
 
 
 viewHS.addEventListener("click", function() {
+    val = new Array();
+    //localStorage.setItem(`${initals.value}`, JSON.stringify(entry));
+    for(let i = 0; i < localStorage.length; i++) {
+        val[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        //12 13 24
+    }
+    if(once ==  true) {
+        val.sort((a, b) => b.score - a.score);
+        prevVal.sort((a, b) => b.score - a.score);
+        hScores.remove();
+        hScores = document.createElement('div');
+        let hOl = document.createElement('ol');
+        hScores.setAttribute("class", 'scores');
+        hScores.append(hOl);
+        for(let i = 0; i < val.length; i++) {
+            hLi = document.createElement('li');
+            if(i == val.length - 1) {
+                once = true;
+            }
+            let inital = val[i].initals;
+            let useScore = val[i].score;
+            hLi.innerText += `${inital}: ${useScore}`
+            hOl.append(hLi);
+            if(i + 1 == val.length) {
+                scoreBoard.append(hScores);
+            }
+
+        }
+    }
+    if(once == false ){//|| once ==  true) {
+        val.sort((a, b) => b.score - a.score);
+        prevVal.sort((a, b) => b.score - a.score);
+        hScores = document.createElement('div');
+        let hOl = document.createElement('ol');
+        hScores.setAttribute("class", 'scores');
+        hScores.append(hOl);
+        for(let i = 0; i < val.length; i++) {
+            hLi = document.createElement('li');
+            if(i == val.length - 1) {
+                once = true;
+            }
+            let inital = val[i].initals;
+            let useScore = val[i].score;
+            hLi.innerText += `${inital}: ${useScore}`
+            hOl.append(hLi);
+            if(i + 1 == val.length) {
+                scoreBoard.append(hScores);
+            }
+
+        }
+    }
     startbox.style.display = 'none';
     middlebox.style.display = 'none';
     finalbox.style.display ='none';
