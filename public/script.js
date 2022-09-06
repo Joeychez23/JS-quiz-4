@@ -17,9 +17,9 @@ const viewHS = document.querySelector('#viewHS');
 const outcome = document.querySelector('#outcome');
 
 
-
 let btnVal = [false, false, false, false];
 
+//Questions / Answers
 let Q1 = "1. In which HTML elements do we put in JavaScript code?"
 
 let Q1A = ['<script>', '<js>', '<body>', '<head>'];
@@ -65,10 +65,11 @@ let Q10A = ['Document.getElementByName', 'Document.getElementsByName', 'Document
 let inputUsed = [];
 
 let text;
+//current question
 let currQ = 1;
 let score = 0;
 let id = 0;
-
+//sets all the buttons values to be random for each question / display the question / button values
 function setBtn() {
     btnVal = [false, false, false, false];
     let btnSet;
@@ -173,25 +174,20 @@ function setBtn() {
 
 
 let timeEl = document.querySelector('#time');
-var secondsLeft = 80;
 
 
 let d;
 
 let highTrue = true;
+//Sets timer using built in time functions
 function setTime() {
     d = new Date().getTime();
-  // Sets interval in variable
   var interval = setInterval(function() {
     if(new Date().getTime() - d <= 80000) {
-        //clearInterval(interval);
-        //console.log(Math.floor((new Date().getTime() - d)/ 1000));
         timeEl.innerText = `Time: ${80 - Math.floor((new Date().getTime() - d)/ 1000)}`
-        //return console.log('yes');
     }
     if(new Date().getTime() - d >= 80000 || currQ == 11) {
         clearInterval(interval);
-        //console.log(Math.floor((new Date().getTime() - d)/ 1000));
         middlebox.style.display = 'none';
         finalbox.style.display = 'block';
         timeEl.innerText = 'Complete';
@@ -200,13 +196,9 @@ function setTime() {
   }, 1000);
 }
 
-//setTime();
-
-//startbox.style.display = 'block';
-//start.addEventListener("click", startgame);
 
 
-
+//Starts the game / calls the functions when invoked
 function startgame() {
     viewHS.style.display = 'none';
     btnVal = [false, false, false, false];
@@ -220,35 +212,38 @@ function startgame() {
 }
 
 
-
+//adds event listener to #start button
 start.addEventListener("click", startgame);
 
+
+
+//looks for first button click and answering question
 btn1.addEventListener("click", function() {
     inputUsed = [];
     currQ += 1;
     console.log(btn1.value);
     if(btnVal[0] == false) {
+        //display incorrect
         outcome.innerText = "Incorrect"
         setTimeout(function() {
             outcome.innerText = ""
         }, 1000);
-        //display incorrect
         d -= 8000;
     }
     if(btnVal[0]== true) {
-        //btnVal = [false, false, false, false];
+        //display correct
         outcome.innerText = "Correct"
         setTimeout(function() {
             outcome.innerText = ""
         }, 1000);
         score += 1;
-        //display correct
     }
+    
     if(currQ < 11) {
         setBtn();
     }
+    //End Game
     if(currQ == 11) {
-        secondsLeft = 0;
         middlebox.style.display = 'none';
         scorebox.innerText = `Your final score is: ${score}`;
         finalbox.style.display = 'block';
@@ -272,25 +267,25 @@ btn2.addEventListener("click", function() {
     currQ += 1;
     console.log(btn2.value);
     if(btnVal[1] == false) {
+        //display incorrect
         outcome.innerText = "Incorect"
         setTimeout(function() {
             outcome.innerText = ""
         }, 1000);
-        //display incorrect
         d -= 8000;
     }
     if(btnVal[1]== true) {
+        //display correct
         outcome.innerText = "Correct"
         setTimeout(function() {
             outcome.innerText = ""
         }, 1000);
-        //btnVal = [false, false, false, false];
         score += 1;
-        //display correct
     }
     if(currQ < 11) {
         setBtn();
     }
+    //End Game
     if(currQ == 11) {
         middlebox.style.display = 'none';
         scorebox.innerText = `Your final score is: ${score}`;
@@ -317,27 +312,26 @@ btn3.addEventListener("click", function() {
     inputUsed = [];
     currQ += 1;
     if(btnVal[2] == false) {
+        //display incorrect
         outcome.innerText = "Incorect"
         setTimeout(function() {
             outcome.innerText = ""
         }, 1000);
-        //display incorrect
         d -= 8000;
     }
     if(btnVal[2]== true) {
+        //display correct
         outcome.innerText = "Correct"
         setTimeout(function() {
             outcome.innerText = ""
         }, 1000);
-        //btnVal = [false, false, false, false];
         score += 1;
-        //display correct
     }
     if(currQ < 11) {
         setBtn();
     }
+    //End Game
     if(currQ == 11) {
-        secondsLeft = 0;
         middlebox.style.display = 'none';
         scorebox.innerText = `Your final score is: ${score}`;
         finalbox.style.display = 'block';
@@ -362,25 +356,25 @@ btn4.addEventListener("click", function() {
     inputUsed = [];
     currQ += 1;
     if(btnVal[3] == false) {
+        //display incorrect
         outcome.innerText = "Incorect"
         setTimeout(function() {
             outcome.innerText = ""
         }, 1000);
-        //display incorrect
         d -= 8000;
     }
     if(btnVal[3]== true) {
+        //display correct
         outcome.innerText = "Correct"
         setTimeout(function() {
             outcome.innerText = ""
         }, 1000);
-        //btnVal = [false, false, false, false];
         score += 1;
-        //display correct
     }
     if(currQ < 11) {
         setBtn();
     }
+    //End Game
     if(currQ == 11) {
         middlebox.style.display = 'none';
         scorebox.innerText = `Your  final score is: ${score}`;
@@ -398,6 +392,7 @@ let val = [];
 let prevVal = [];
 let newName;
 let hScores;
+//Submits scores to leaderboard
 subscore.addEventListener("click", function() {
     let entry = {
         initals: initals.value,
@@ -418,7 +413,6 @@ subscore.addEventListener("click", function() {
     localStorage.setItem(`${initals.value}`, JSON.stringify(entry));
     for(let i = 0; i < localStorage.length; i++) {
         val[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        //12 13 24
     }
     if(once ==  true) {
         val.sort((a, b) => b.score - a.score);
@@ -443,7 +437,7 @@ subscore.addEventListener("click", function() {
 
         }
     }
-    if(once == false ){//|| once ==  true) {
+    if(once == false )  {
         val.sort((a, b) => b.score - a.score);
         prevVal.sort((a, b) => b.score - a.score);
         hScores = document.createElement('div');
@@ -468,25 +462,25 @@ subscore.addEventListener("click", function() {
     finalbox.style.display = 'none';
     scoreBoard.style.display = 'block';
     viewHS.style.display = 'block';
-    //startbox.style.display = 'block';
-    //scoreBoard.style.display = 'none'
 })
 
+//Back button
 back.addEventListener("click", function() {
     startbox.style.display = 'block';
     scoreBoard.style.display = 'none';
     timeEl.innerText = 'Time: 80';
 })
 
+//clear leaderboard
 clear.addEventListener("click", function(){
     localStorage.clear();
     hScores.remove();
 })
 
 
+//view highscores from button
 viewHS.addEventListener("click", function() {
     val = new Array();
-    //localStorage.setItem(`${initals.value}`, JSON.stringify(entry));
     for(let i = 0; i < localStorage.length; i++) {
         val[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
         //12 13 24
