@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content=" IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic</title>
+
+
+
+
+
+        <!--jquery CDN-->
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        
+        
+        <!--jquery code-->
+        <script>
+            $(document).ready(function() {});
+        </script>
+
+
+
+
+
+
+        <!--resetstylesheet link-->
+
+        <link href= "./public/resetstylesheet.css" type= "text/css" rel= "stylesheet">
+
+        <!--stylesheet link-->
+
+        <link href= "./public/style.css" type= "text/css" rel= "stylesheet">
+
+
+
+
+
+
+        <!--bootstrap CDN-->
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        
+
+
+
+
+    </head>
+    <body>
+        <header>
+            <div>
+                <div id="high"><button id="viewHS">View HighScores</button></div>
+                <div id="time">Time: 80</div>
+            </div>
+        </header>
+        <div id="startbox">
+            <div class="title">
+                <h1>Coding Quiz Challange</h1>
+            </div>
+            <div>
+                <h4>Praesent eget ultricies augue. Morbi varius, purus non porttitor pellentesque, dolor libero convallis nisi:</h4>
+            </div>
+            <div>
+                <button id="SB">Start</button>
+            </div>
+            
+        </div>
+        <div id="middlebox">
+            <div id="Qbox">
+                <h4 id="question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt, ante ac porta gravida.:</h4>
+            </div>
+            <div id="Abox">
+                <ul id="Alist">
+                    <li><button id="btn1">1. HELLO</button></li>
+                    <li><button id="btn2">2. HELLO</button></li>
+                    <li><button id="btn3">3. HELLO</button></li>
+                    <li><button id="btn4">4. HELLO</button></li>
+                </ul>
+                <br>
+            </div>
+            <div id="outcome"></div>
+        </div>
+        <div id="finalbox">
+            <div id="scoreEnter">
+                <div class="title">
+                    <h1>All Done</h1>
+                </div>
+                <div id="score">Your final score is: </div>
+                <div>Enter Initals:<input id="initals" type="text"><button id="submitScore">Submit</button></div>
+            </div>
+        </div>
+        <div id="scoreBoard">
+            <div class="title">
+                <h1>HighScores</h1>
+                <button class="button" style="background-color: purple" id="goBack">go back</button>
+                <button class="button" style="background-color: purple" id="clearS">clear</button>
+            </div>  
+        </div>
+
+
+    </body>
+
+    <!--JavaScript link-->
+
+    <script src="./public/script.js"></script>
+
+    
+</html>

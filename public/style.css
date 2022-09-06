@@ -1,0 +1,183 @@
+ul {
+    display: block;
+}
+
+li {
+    list-style:none;
+    padding: none;
+    margin: none;
+}
+
+
+
+header {
+    border: 2px solid blue;
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#high {
+    padding: 10px;
+}
+
+#time {
+    padding: 10px;
+}
+
+a {
+    color: purple;
+}
+
+
+#startbox {
+    display: block;
+    border: 3px solid red;
+    margin: 10%;
+    padding: 5%;
+
+}
+
+#startbox div {
+    display: flex;
+    justify-content: center;
+    border: 3px solid orange
+}
+
+#SB {
+    background-color: purple;
+    margin: 3px;
+    border-radius: 5px;
+    color: white
+}
+
+
+#SB:hover {
+    opacity: 75%;
+}
+
+
+
+
+
+
+
+
+
+
+
+#middlebox {
+    border: 2px solid green;
+    display: none;
+    padding: 10% 10%;
+}
+
+#Qbox {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+
+}
+
+#Abox {
+    display: flex;
+    justify-content:flex-start;
+    border: 2px solid red;
+}
+
+button {
+    background-color: purple;
+    background: none;
+    border: none;
+    color: white;
+}
+
+#Alist{
+    margin-left: -32px;
+}
+
+#Alist li {
+    background-color: purple;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+#Alist li:hover {
+    opacity: 85%;
+}
+
+
+
+#outcome {
+    display: block;
+}
+
+
+#finalbox {
+    display: none;
+    border: 3px solid blue;
+    padding: 5% 10%;
+}
+
+#finalbox div{
+    justify-content: center;
+    border: 3px solid red;
+}
+
+#finalbox div div{
+    display: block;
+    border: 3px solid green;
+}
+
+#finalbox div div input{
+    margin: 10px;
+}
+
+#finalbox div div button{
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+}
+
+button:hover {
+    opacity: 85%;
+}
+
+#scoreBoard {
+    display: none;
+    text-align: center;
+    border: 2px solid orange
+}
+
+.scores {
+    border: 2px solid orange;
+    display: flex;
+    justify-content: center;
+}
+
+.scores ol {
+    border: 2px solid orange;
+    list-style: none;
+    padding: 0%;
+    
+}
+
+.scores ol li {
+    border: 2px solid orange;
+    
+}
+
+.button {
+    background-color: purple;
+    background: none;
+    border: none;
+    color: white;
+    border-radius: 3px;
+}
+
+#viewHS {
+    color: purple;
+    text-decoration: underline;
+}
